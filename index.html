@@ -22,8 +22,7 @@
                 </a>
             </div>
 
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-            <label for="menu-toggle" class="mobile-menu-btn" aria-label="Abrir menu">☰</label>
+            <button id="menuToggle" class="mobile-menu-btn" aria-label="Abrir menu">☰</button>
 
             <div class="nav-menu-wrapper">
                 <nav class="nav-links">
@@ -74,32 +73,41 @@
         </div>
     </section>
 
-    <section class="metrics">
+    <section class="metrics" reveal>
         <div class="container metrics-grid">
             <div class="metric-item">
-                <h3>+10k</h3>
+                <h3 data-valor="10" data-sufixo="k" data-prefixo="+">0</h3>
                 <p>Usuários ativos</p>
             </div>
             <div class="metric-item">
-                <h3>99.9%</h3>
+                <h3 data-valor="99.9" data-sufixo="%">0</h3>
                 <p>Uptime garantido</p>
             </div>
             <div class="metric-item">
-                <h3>+500</h3>
+                <h3 data-valor="500" data-prefixo="+">0</h3>
                 <p>Empresas globais</p>
             </div>
             <div class="metric-item">
-                <h3>24/7</h3>
+                <h3 class="metric-fixo">24/7</h3>
                 <p>Suporte especializado</p>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <section id="features" class="features" reveal>
         <div class="container">
             <div class="section-header">
                 <h2>Tudo que você precisa para crescer</h2>
                 <p>Ferramentas poderosas desenhadas para simplificar o seu dia a dia.</p>
+
+                <div class="billing-toggle">
+                    <span class="billing-label">Mensal</span>
+                    <button type="button" class="toggle-switch" id="billingToggle" role="switch" aria-checked="false"
+                        aria-label="Alternar entre cobrança mensal e anual">
+                        <span class="toggle-switch-thumb"></span>
+                    </button>
+                    <span class="billing-label">Anual <span class="billing-discount">-20%</span></span>
+                </div>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -126,7 +134,7 @@
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
+    <section id="how-it-works" class="how-it-works" reveal>
         <div class="container">
             <div class="section-header">
                 <h2>Simples do início ao fim</h2>
@@ -154,7 +162,7 @@
         </div>
     </section>
 
-    <section class="testimonials">
+    <section class="testimonials" reveal>
         <div class="container">
             <div class="section-header">
                 <h2>Amado por equipes modernas</h2>
@@ -197,7 +205,7 @@
         </div>
     </section>
 
-    <section id="pricing" class="pricing">
+    <section id="pricing" class="pricing" reveal>
         <div class="container">
             <div class="section-header">
                 <h2>Preços justos e transparentes</h2>
@@ -208,7 +216,8 @@
                 <div class="pricing-card">
                     <h3>Básico</h3>
                     <p class="price-desc">Para indivíduos e freelancers</p>
-                    <div class="price"><span>R$</span>0<span>/mês</span></div>
+                    <div class="price" id="precoBasico" data-mensal="0" data-anual="0"><span>R$</span><span
+                            class="price-valor">0</span><span>/mês</span></div>
                     <ul class="features-list">
                         <li>✓ Até 3 projetos</li>
                         <li>✓ 2GB de armazenamento</li>
@@ -221,7 +230,8 @@
                     <div class="popular-badge">Mais escolhido</div>
                     <h3>Pro</h3>
                     <p class="price-desc">Para pequenas e médias equipes</p>
-                    <div class="price"><span>R$</span>49<span>/mês</span></div>
+                    <div class="price" id="precoPro" data-mensal="49" data-anual="39"><span>R$</span><span
+                            class="price-valor">49</span><span>/mês</span></div>
                     <ul class="features-list">
                         <li>✓ Projetos ilimitados</li>
                         <li>✓ 50GB de armazenamento</li>
@@ -290,6 +300,7 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
