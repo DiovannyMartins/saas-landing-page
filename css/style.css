@@ -160,6 +160,8 @@ ul {
   cursor: pointer;
   font-size: 1.5rem;
   padding: 5px;
+  background-color: var(--bg-color);
+  border: none;
 }
 
 .nav-menu-wrapper {
