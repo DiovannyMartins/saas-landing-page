@@ -548,6 +548,36 @@ section {
   font-weight: 500;
 }
 
+.price-valor {
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.price-valor--trocando {
+  transform: translateY(-8px);
+  opacity: 0;
+}
+
+.price-valor--trocando {
+  transform: translateY(-8px);
+  opacity: 0;
+}
+
+@keyframes destaquePreco {
+  0% {
+    color: var(--accent);
+  }
+  100% {
+    color: var(--text-main);
+  }
+}
+
+.price-valor--destacado {
+  animation: destaquePreco 0.6s ease;
+}
+
 .features-list li {
   margin-bottom: 12px;
   font-size: 0.95rem;

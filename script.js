@@ -100,10 +100,30 @@ billingToggle.addEventListener("click", () => {
 
   precosElementos.forEach((precoEl) => {
     const valorNode = precoEl.querySelector(".price-valor");
-    const valor = novoEstado ? precoEl.dataset.anual : precoEl.dataset.mensal;
-    valorNode.textContent = valor;
+    const novoValor = novoEstado
+      ? precoEl.dataset.anual
+      : precoEl.dataset.mensal;
+
+    // Etapa 1: sobe e some (classe --trocando dispara a transição no CSS)
+    valorNode.classList.add("price-valor--trocando");
+
+    // Etapa 2: depois que a transição de saída termina, troca o número e revela de novo
+    setTimeout(() => {
+      valorNode.textContent = novoValor;
+      valorNode.classList.remove("price-valor--trocando");
+    }, 300); // precisa bater com a duração da transição no CSS (0.3s = 300ms)
   });
 });
+
+setTimeout(() => {
+  valorNode.textContent = novoValor;
+  valorNode.classList.remove("price-valor--trocando");
+  valorNode.classList.add("price-valor--destacado");
+
+  setTimeout(() => {
+    valorNode.classList.remove("price-valor--destacado");
+  }, 600);
+}, 300);
 
 /* ===== SCROLL SPY (link ativo no menu) ===== */
 
