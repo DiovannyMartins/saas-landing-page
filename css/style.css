@@ -548,21 +548,23 @@ section {
   font-weight: 500;
 }
 
+/* Valor antigo riscado, exibido só quando o plano anual está ativo */
+.price-valor-antigo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-right: 4px;
+  display: none;
+}
+
+.price-valor-antigo--visivel {
+  display: inline;
+}
+
+/* Leve destaque de cor no valor novo ao trocar, sem deslocamento */
 .price-valor {
-  display: inline-block;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.price-valor--trocando {
-  transform: translateY(-8px);
-  opacity: 0;
-}
-
-.price-valor--trocando {
-  transform: translateY(-8px);
-  opacity: 0;
+  transition: color 0.3s ease;
 }
 
 @keyframes destaquePreco {

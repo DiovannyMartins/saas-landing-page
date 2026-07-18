@@ -100,30 +100,29 @@ billingToggle.addEventListener("click", () => {
 
   precosElementos.forEach((precoEl) => {
     const valorNode = precoEl.querySelector(".price-valor");
-    const novoValor = novoEstado
-      ? precoEl.dataset.anual
-      : precoEl.dataset.mensal;
+    const valorAntigoNode = precoEl.querySelector(".price-valor-antigo");
 
-    // Etapa 1: sobe e some (classe --trocando dispara a transição no CSS)
-    valorNode.classList.add("price-valor--trocando");
+    const valorMensal = precoEl.dataset.mensal;
+    const valorAnual = precoEl.dataset.anual;
 
-    // Etapa 2: depois que a transição de saída termina, troca o número e revela de novo
+    if (novoEstado) {
+      // Modo anual: mostra o preço mensal riscado + o preço anual em destaque
+      valorAntigoNode.textContent = valorMensal;
+      valorAntigoNode.classList.add("price-valor-antigo--visivel");
+      valorNode.textContent = valorAnual;
+    } else {
+      // Modo mensal: esconde o riscado, mostra só o valor normal
+      valorAntigoNode.classList.remove("price-valor-antigo--visivel");
+      valorNode.textContent = valorMensal;
+    }
+
+    // Pequeno destaque de cor no valor novo, pra chamar atenção da troca
+    valorNode.classList.add("price-valor--destacado");
     setTimeout(() => {
-      valorNode.textContent = novoValor;
-      valorNode.classList.remove("price-valor--trocando");
-    }, 300); // precisa bater com a duração da transição no CSS (0.3s = 300ms)
+      valorNode.classList.remove("price-valor--destacado");
+    }, 600);
   });
 });
-
-setTimeout(() => {
-  valorNode.textContent = novoValor;
-  valorNode.classList.remove("price-valor--trocando");
-  valorNode.classList.add("price-valor--destacado");
-
-  setTimeout(() => {
-    valorNode.classList.remove("price-valor--destacado");
-  }, 600);
-}, 300);
 
 /* ===== SCROLL SPY (link ativo no menu) ===== */
 
