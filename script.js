@@ -43,7 +43,7 @@ revealElements.forEach((el) => revealObserver.observe(el));
 /* ===== CONTADOR ANIMADO NAS MÉTRICAS ===== */
 
 const metricasNumeros = document.querySelectorAll(
-  ".metric-item h3:not(.metric-fixo)",
+  ".metric-item span:not(.metric-fixo)",
 );
 const DURACAO_ANIMACAO_MS = 1500;
 
