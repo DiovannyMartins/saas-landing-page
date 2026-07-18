@@ -567,19 +567,6 @@ section {
   transition: color 0.3s ease;
 }
 
-@keyframes destaquePreco {
-  0% {
-    color: var(--accent);
-  }
-  100% {
-    color: var(--text-main);
-  }
-}
-
-.price-valor--destacado {
-  animation: destaquePreco 0.6s ease;
-}
-
 .features-list li {
   margin-bottom: 12px;
   font-size: 0.95rem;

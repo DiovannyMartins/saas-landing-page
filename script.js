@@ -105,22 +105,19 @@ billingToggle.addEventListener("click", () => {
     const valorMensal = precoEl.dataset.mensal;
     const valorAnual = precoEl.dataset.anual;
 
-    if (novoEstado) {
-      // Modo anual: mostra o preço mensal riscado + o preço anual em destaque
+    // Se o valor não muda entre mensal e anual (ex: plano gratuito), não faz sentido riscar
+    const temDesconto = valorMensal !== valorAnual;
+
+    if (novoEstado && temDesconto) {
+      // Modo anual, com desconto real: mostra o preço mensal riscado + o preço anual
       valorAntigoNode.textContent = valorMensal;
       valorAntigoNode.classList.add("price-valor-antigo--visivel");
       valorNode.textContent = valorAnual;
     } else {
-      // Modo mensal: esconde o riscado, mostra só o valor normal
+      // Modo mensal, ou sem desconto (ex: plano gratuito): esconde o riscado
       valorAntigoNode.classList.remove("price-valor-antigo--visivel");
-      valorNode.textContent = valorMensal;
+      valorNode.textContent = novoEstado ? valorAnual : valorMensal;
     }
-
-    // Pequeno destaque de cor no valor novo, pra chamar atenção da troca
-    valorNode.classList.add("price-valor--destacado");
-    setTimeout(() => {
-      valorNode.classList.remove("price-valor--destacado");
-    }, 600);
   });
 });
 
