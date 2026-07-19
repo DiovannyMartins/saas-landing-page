@@ -542,10 +542,20 @@ section {
   gap: 4px;
 }
 
-.price span {
+/* Herda o estilo pequeno e cinza APENAS para o R$ e o /mês */
+.price span:not(.price-valor):not(.price-valor-antigo) {
   font-size: 1rem;
   color: var(--text-muted);
   font-weight: 500;
+}
+
+/* Garante que o valor numérico (49, 0, etc.) fique idêntico ao "Personalizado" */
+.price .price-valor {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -1px;
+  transition: color 0.3s ease;
 }
 
 /* Valor antigo riscado, exibido só quando o plano anual está ativo */
@@ -687,6 +697,11 @@ section {
   transform: translateX(22px);
 }
 
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+========================================== */
+
+/* Tablet e Notebooks Pequenos (até 1024px) */
 @media (max-width: 1024px) {
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -701,7 +716,20 @@ section {
   }
 }
 
+/* Celulares e Tablets Pequenos (até 768px) */
 @media (max-width: 768px) {
+  /* 1. Trava geral de vazamento e quebra de palavras longas */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  * {
+    word-break: break-word;
+  }
+
+  /* 2. Correção do Menu Mobile (Evita vazamento dos links) */
   .mobile-menu-btn {
     display: block;
   }
@@ -712,19 +740,21 @@ section {
     top: 70px;
     left: 0;
     width: 100%;
-    background: white;
+    background: var(--bg-color);
     flex-direction: column;
-    padding: 20px;
+    padding: 24px;
     border-bottom: 1px solid var(--border-color);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     gap: 20px;
     text-align: center;
     z-index: 99;
   }
 
-  .nav-actions .btn-ghost {
+  /* ADICIONADO: Força os links a ficarem em coluna e respeitarem a tela */
+  .nav-links {
+    flex-direction: column;
     width: 100%;
-    margin-bottom: 10px;
+    gap: 16px;
   }
 
   .nav-actions {
@@ -732,36 +762,80 @@ section {
     width: 100%;
   }
 
+  .nav-actions .btn-ghost {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  /* 3. Hero e Mockup (Desativa o 3D que quebra o Safari/iOS) */
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .hero-buttons {
     flex-direction: column;
-    padding: 0 20px;
+    padding: 0;
   }
 
+  .mockup {
+    transform: none; /* Desativa rotação 3D no mobile para não vazar a tela */
+  }
+
+  .mockup-body {
+    flex-direction: column;
+  }
+
+  .mockup-sidebar {
+    width: 100%;
+    height: auto;
+    padding: 12px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .mockup-grid,
+  .testimonials-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 4. Passos (Correção do traço vertical) */
   .steps-flex {
     flex-direction: column;
     align-items: center;
   }
 
   .step-connector {
+    flex: none; /* ADICIONADO: Remove a tentativa de expansão do flexbox */
     width: 2px;
     height: 40px;
     margin: 0;
   }
 
+  /* 5. Grids de Preço e Cards */
   .pricing-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing-card {
+    width: 100%;
+    padding: 32px 20px;
+  }
+
+  .pricing-card.popular {
+    transform: scale(1);
+    margin: 12px 0;
   }
 
   .pricing-card:last-child {
     grid-column: span 1;
   }
 
+  /* 6. Rodapé */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   .footer-brand {
@@ -775,6 +849,7 @@ section {
   }
 }
 
+/* Celulares Pequenos (até 480px) */
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr;
