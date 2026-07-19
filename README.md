@@ -1,31 +1,40 @@
 # SaaS Landing Page
 
-Landing page profissional inspirada em plataformas SaaS modernas, desenvolvida com HTML e CSS.
+Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e JavaScript, com design moderno inspirado em plataformas como Vercel e Stripe.
+
+🔗 **Acesse:** [diovannymartins.github.io/saas-landing-page](https://diovannymartins.github.io/saas-landing-page/)
 
 ## 🚀 Tecnologias
+
 - HTML5
 - CSS3
+- JavaScript
 
-## 💼 Funcionalidades
-- Layout moderno
-- Design responsivo
-- Sessões organizadas
-- Interface profissional
-- Estrutura inspirada em produtos SaaS
+## ⚙️ Funcionalidades
 
-## 📸 Preview
-<img width="500px" height="auto" alt="{099ECC1F-F371-4F9D-8709-B471A9F8A46A}" src="https://github.com/user-attachments/assets/aaf0302b-816e-4d99-9a38-5c9074c97e88" />
+- **Menu mobile responsivo**
+- **Header com efeito ao rolar** (sombra e blur dinâmicos)
+- **Scroll reveal** — seções aparecem com fade-in ao rolar a página
+- **Contador animado nas métricas**, disparado ao entrar na tela
+- **Toggle de billing mensal/anual**, com preço antigo riscado exibindo o desconto
+- **Scroll spy** — link do menu destaca conforme a seção visível
+- **Totalmente responsivo** (desktop, tablet e mobile)
 
-## 🔗 Deploy
-https://diovannymartins.github.io/saas-landing-page/
+## 📦 Versões
+
+- **[v1.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v1.0.0)** — Versão inicial, 100% HTML5 e CSS3
+- **[v2.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v2.0.0)** — Adição de JavaScript: scroll reveal, contador animado, toggle de billing e scroll spy
 
 ## 📚 Aprendizados
-Durante o desenvolvimento deste projeto pratiquei:
-- Estruturação de landing pages
-- Design moderno para SaaS
-- Responsividade
-- Organização visual
-- Hierarquia de conteúdo
 
-## 👨‍💻 Autor
+Com este projeto pratiquei:
+
+- `IntersectionObserver` para animações de scroll e contadores
+- Manipulação de estado visual (toggle de billing) com `data-*` attributes
+- Estruturação semântica de HTML (landmarks, hierarquia de títulos)
+- Boas práticas de acessibilidade (ARIA, `role="switch"`)
+- Fluxo completo de versionamento Git (branches, tags, releases)
+
+## 👤 Autor
+
 Diovanny Martins
