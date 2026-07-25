@@ -1,82 +1,63 @@
-# DevBlog - Professional Web Project Structure
+# SaaS Landing Page
 
-A professional web project built with pure HTML5, CSS3, and JavaScript (ES Modules), following modern market standards and best practices.
+Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e JavaScript (ES Modules), com design moderno inspirado em plataformas como Vercel e Stripe.
 
-## Project Structure
+**Acesse:** [diovannymartins.github.io/saas-landing-page](https://diovannymartins.github.io/saas-landing-page/)
+
+## Tecnologias
+
+- HTML5 semantico
+- CSS3 (Mobile-First, BEM)
+- JavaScript (ES Modules)
+
+## Estrutura do Projeto
 
 ```
 ├── assets/
-│   └── images/
-│       └── favicon.svg
+│   └── favicon.svg
 ├── css/
-│   ├── base/
-│   │   ├── variables.css    # CSS variables with dark mode support
-│   │   ├── reset.css        # CSS reset/normalize
-│   │   └── typography.css   # Typography system
-│   ├── layout/
-│   │   ├── container.css    # Container system
-│   │   └── grid.css         # Grid and Flexbox utilities
-│   ├── components/
-│   │   ├── button.css       # Button component (BEM)
-│   │   ├── card.css         # Card component (BEM)
-│   │   ├── header.css       # Header component (BEM)
-│   │   ├── search.css       # Search input component (BEM)
-│   │   ├── loading.css      # Loading states and skeletons
-│   │   └── theme-toggle.css # Dark mode toggle
-│   └── main.css             # Main CSS entry point
-├── js/
-│   ├── api.js               # API module with async/await
-│   ├── dom.js               # DOM manipulation module
-│   ├── utils.js             # Utility functions
-│   └── main.js              # Main entry point
-└── index.html               # Semantic HTML5 with SEO
+│   └── style.css
+├── src/
+│   └── scripts/
+│       ├── main.js
+│       └── modules/
+│           ├── billing.js
+│           ├── counter.js
+│           ├── menu.js
+│           ├── scroll.js
+│           ├── scrollspy.js
+│           └── utils.js
+└── index.html
 ```
 
-## Features
+## Funcionalidades
 
-### Architecture
-- **Modular CSS**: Componentized with base/, layout/, components/ structure
-- **ES Modules**: JavaScript organized in separate modules with import/export
-- **BEM Methodology**: Consistent naming convention for CSS classes
-- **Mobile-First**: Responsive design using min-width media queries
+- **Menu mobile responsivo** com aria-expanded e aria-controls
+- **Header com efeito ao rolar** (sombra e blur dinâmicos)
+- **Scroll reveal** com IntersectionObserver
+- **Contador animado nas metricas**, disparado ao entrar na tela
+- **Toggle de billing mensal/anual**, com preco antigo riscado
+- **Scroll spy** com link ativo no menu
+- **Skip navigation link** para acessibilidade
+- **Focus visible** para navegacao por teclado
+- **Meta tags Open Graph e Twitter Card** para SEO
+- **Totalmente responsivo** (Mobile-First)
 
-### CSS
-- **CSS Variables**: Centralized design tokens with dark mode support
-- **Flexbox & Grid**: Modern layout techniques
-- **Component-Based**: Reusable UI components
-- **Custom Properties**: Theme switching with data-theme attribute
+## Padroes Adotados
 
-### JavaScript
-- **ES Modules**: Modern import/export syntax
-- **Async/Await**: Robust error handling with try/catch
-- **Event Delegation**: Performant event handling
-- **Modern Array Methods**: filter, map for data manipulation
-- **Clean Code**: Well-documented with JSDoc comments
+- **BEM** (Block Element Modifier) para nomenclatura CSS
+- **Mobile-First** com media queries `min-width`
+- **ES Modules** com `import/export`
+- **Clean Code** com validacao de elementos e throttle
+- **WCAG AA** de contraste e acessibilidade
+- **HTML semantico** com landmarks, article, blockquote
 
-### Accessibility
-- **Semantic HTML5**: header, nav, main, section, article, footer
-- **ARIA Attributes**: aria-label, aria-expanded, aria-live, aria-hidden
-- **Skip Navigation**: Skip link for keyboard users
-- **Focus States**: Visible focus indicators
-- **Screen Reader Support**: sr-only class for hidden content
+## Versoes
 
-### SEO
-- **Meta Tags**: Description, theme-color, canonical URL
-- **Open Graph**: Social sharing optimization
-- **Twitter Cards**: Twitter-specific meta tags
-- **Semantic Markup**: Proper heading hierarchy
+- **[v1.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v1.0.0)** — Versao inicial, 100% HTML5 e CSS3
+- **[v2.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v2.0.0)** — JavaScript: scroll reveal, contador animado, toggle de billing e scroll spy
+- **[v3.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v3.0.0)** — Auditoria profissional: ES Modules, Mobile-First, BEM, SEO e acessibilidade
 
-## Getting Started
+## Autor
 
-Simply open `index.html` in a modern browser. No build tools required.
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## License
-
-MIT
+Diovanny Martins
