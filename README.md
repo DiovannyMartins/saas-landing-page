@@ -10,7 +10,26 @@ Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e Java
 ├── assets/
 │   └── favicon.svg
 ├── css/
-│   └── style.css              # CSS com variáveis, BEM e Dark Mode
+│   ├── base/
+│   │   ├── variables.css      # Design tokens e Dark Mode
+│   │   ├── reset.css          # Reset e estilos base
+│   │   └── accessibility.css  # Skip-link, sr-only, focus states
+│   ├── layout/
+│   │   ├── container.css      # Container responsivo
+│   │   └── sections.css       # Seções base
+│   ├── components/
+│   │   ├── button.css         # Botões (BEM)
+│   │   ├── header.css         # Navbar e menu mobile
+│   │   ├── hero.css           # Hero section e mockup
+│   │   ├── metrics.css        # Métricas
+│   │   ├── features.css       # Features e steps
+│   │   ├── testimonials.css   # Depoimentos
+│   │   ├── pricing.css        # Preços
+│   │   ├── footer.css         # Footer
+│   │   ├── animations.css     # Scroll reveal
+│   │   ├── billing.css        # Toggle mensal/anual
+│   │   └── theme.css          # Dark mode toggle
+│   └── main.css               # Entry point (imports + media queries)
 ├── src/
 │   └── scripts/
 │       ├── main.js            # Entry point
@@ -29,7 +48,7 @@ Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e Java
 ## Tecnologias
 
 - HTML5 semântico
-- CSS3 (Mobile-First, BEM, Dark Mode)
+- CSS3 (Mobile-First, BEM, Dark Mode, Componentizado)
 - JavaScript (ES Modules, async/await)
 
 ## Funcionalidades
@@ -51,6 +70,7 @@ Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e Java
 
 ### Arquitetura
 - **ES Modules** com import/export
+- **CSS Componentizado** com base/, layout/, components/
 - **Modularização** por responsabilidade
 - **Clean Code** com validação de elementos
 
@@ -59,6 +79,7 @@ Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e Java
 - **Mobile-First** com media queries `min-width`
 - **CSS Variables** para design tokens
 - **Dark Mode** com `[data-theme="dark"]`
+- **@import** para organizar partials
 
 ### JavaScript
 - **async/await** com try/catch
@@ -88,6 +109,7 @@ Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e Java
 - **[v2.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v2.0.0)** — JavaScript: scroll reveal, contador animado, toggle de billing e scroll spy
 - **[v3.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v3.0.0)** — Auditoria profissional: ES Modules, Mobile-First, BEM, SEO e acessibilidade
 - **[v4.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v4.0.0)** — Dark mode, API simulation, melhorias de performance
+- **[v5.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v5.0.0)** — CSS componentizado em módulos organizados
 
 ## Autor
 
