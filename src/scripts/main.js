@@ -10,6 +10,7 @@ import { initBillingToggle } from "./modules/billing.js";
 import { initScrollSpy } from "./modules/scrollspy.js";
 import { initTheme } from "./modules/theme.js";
 import { fetchTestimonials, transformTestimonials } from "./modules/api.js";
+import { renderTestimonials } from "./modules/dom.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initMenu();
@@ -31,14 +32,14 @@ async function loadTestimonials() {
     const data = await fetchTestimonials();
     const transformed = transformTestimonials(data);
 
-    console.log("Testimonials loaded:", transformed.length);
+    renderTestimonials(transformed);
 
     const stats = transformed.reduce((acc, item) => {
       acc.total++;
       return acc;
     }, { total: 0 });
 
-    console.log("Stats:", stats);
+    console.log("Testimonials loaded:", stats.total);
   } catch (error) {
     console.error("Failed to load testimonials:", error.message);
   }

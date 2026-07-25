@@ -25,7 +25,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--primary);
-  color: white;
+  color: var(--primary-text);
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.75rem;

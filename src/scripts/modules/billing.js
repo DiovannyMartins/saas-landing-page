@@ -11,6 +11,7 @@ export function initBillingToggle() {
     ".price[data-mensal]",
     "pricing elements"
   );
+  const announcement = getElement("billing-announcement", "Billing announcement");
 
   if (!billingToggle || precosElementos.length === 0) return;
 
@@ -40,5 +41,10 @@ export function initBillingToggle() {
         valorNode.textContent = novoEstado ? valorAnual : valorMensal;
       }
     });
+
+    if (announcement) {
+      const periodo = novoEstado ? "anual" : "mensal";
+      announcement.textContent = `Preços alterados para cobrança ${periodo}`;
+    }
   });
 }

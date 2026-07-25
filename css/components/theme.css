@@ -35,21 +35,6 @@
   background: rgba(15, 23, 42, 0.95);
 }
 
-[data-theme="dark"] .mockup {
-  background-color: #020617;
-  border-color: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] .mockup__header {
-  background-color: #0f172a;
-}
-
-[data-theme="dark"] .mockup__sidebar,
-[data-theme="dark"] .mockup__card,
-[data-theme="dark"] .mockup__box {
-  background: #0f172a;
-}
-
 [data-theme="dark"] .billing-discount {
   background-color: #064e3b;
   color: #6ee7b7;
