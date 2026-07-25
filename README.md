@@ -1,116 +1,188 @@
-# NexaSaaS - Landing Page Profissional
+# NexaSaaS Landing Page
 
-Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e JavaScript (ES Modules), com design moderno inspirado em plataformas como Vercel e Stripe.
+Landing page profissional para produto SaaS, desenvolvida com HTML, CSS e JavaScript puro (Vanilla), focada em performance, acessibilidade e organização de código.
 
-**Acesse:** [diovannymartins.github.io/saas-landing-page](https://diovannymartins.github.io/saas-landing-page/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) [![Responsive](https://img.shields.io/badge/Responsive-Sim-green?style=for-the-badge)](https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Responsive_Design)
 
-## Estrutura do Projeto
+---
 
-```
-├── assets/
-│   └── favicon.svg
-├── css/
-│   ├── base/
-│   │   ├── variables.css      # Design tokens e Dark Mode
-│   │   ├── reset.css          # Reset e estilos base
-│   │   └── accessibility.css  # Skip-link, sr-only, focus states
-│   ├── layout/
-│   │   ├── container.css      # Container responsivo
-│   │   └── sections.css       # Seções base
-│   ├── components/
-│   │   ├── button.css         # Botões (BEM)
-│   │   ├── header.css         # Navbar e menu mobile
-│   │   ├── hero.css           # Hero section e mockup
-│   │   ├── metrics.css        # Métricas
-│   │   ├── features.css       # Features e steps
-│   │   ├── testimonials.css   # Depoimentos
-│   │   ├── pricing.css        # Preços
-│   │   ├── footer.css         # Footer
-│   │   ├── animations.css     # Scroll reveal
-│   │   ├── billing.css        # Toggle mensal/anual
-│   │   └── theme.css          # Dark mode toggle
-│   └── main.css               # Entry point (imports + media queries)
-├── src/
-│   └── scripts/
-│       ├── main.js            # Entry point
-│       └── modules/
-│           ├── api.js         # Async/await com error handling
-│           ├── billing.js     # Toggle mensal/anual
-│           ├── counter.js     # Contadores animados
-│           ├── menu.js        # Menu mobile
-│           ├── scroll.js      # Scroll effects
-│           ├── scrollspy.js   # Navegação ativa
-│           ├── theme.js       # Dark mode toggle
-│           └── utils.js       # Funções auxiliares
-└── index.html                 # HTML semântico com SEO e A11y
-```
+## Destaques
+
+- 100% JavaScript Vanilla
+- Zero dependências
+- Mobile First
+- Dark/Light Mode
+- Acessível (WCAG AA)
+- SEO otimizado
+- CSS componentizado (BEM)
+- ES Modules
+
+---
+
+## Demo
+
+[Ver ao vivo](https://diovannymartins.github.io/saas-landing-page/)
+
+---
 
 ## Tecnologias
 
-- HTML5 semântico
-- CSS3 (Mobile-First, BEM, Dark Mode, Componentizado)
-- JavaScript (ES Modules, async/await)
+| Stack | Detalhe |
+|-------|---------|
+| HTML5 | Semântica, ARIA, meta tags Open Graph/Twitter Card |
+| CSS3 | Variáveis CSS, Grid, Flexbox, animações, `@import` modular, BEM |
+| JavaScript (ES6+) | ES Modules, async/await, IntersectionObserver, sem dependências externas |
+| Git/GitHub | Versionamento e deploy via GitHub Pages |
+| Google Fonts | Inter (títulos e corpo) |
+
+---
+
+## Sobre o projeto
+
+O projeto foi desenvolvido com foco em simplicidade, desempenho e facilidade de avaliação, dispensando etapas de build ou dependências externas. As decisões técnicas principais:
+
+- **Zero dependências**: nenhum framework, nenhum build step. Abre o `index.html` e funciona.
+- **CSS modular com `@import`**: base (reset, variáveis, acessibilidade), layout (container, seções) e componentes (header, hero, features, pricing, etc.) separados em arquivos independentes. Facilita manutenção e leitura.
+- **JavaScript em ES Modules**: cada funcionalidade (tema, menu, scroll, contador, billing, API) vive em seu próprio módulo. O `main.js` apenas inicializa — sem acoplamento.
+- **Dark Mode com anti-FOUC**: o script de tema respeita a preferência do sistema e persiste a escolha do usuário via `localStorage`.
+- **Acessibilidade como requisito, não extra**: skip link, ARIA labels, `aria-live` no billing toggle, `aria-expanded` no menu, focus visible customizado.
+- **Performance**: `preconnect` para fontes, `requestAnimationFrame` nos contadores, `IntersectionObserver` para scroll reveal e scroll spy, throttle no scroll listener.
+
+---
 
 ## Funcionalidades
 
-- **Menu mobile responsivo** com aria-expanded e aria-controls
-- **Header com efeito ao rolar** (sombra e blur dinâmicos)
-- **Scroll reveal** com IntersectionObserver
-- **Contador animado nas métricas**, disparado ao entrar na tela
-- **Toggle de billing mensal/anual**, com preço antigo riscado
-- **Scroll spy** com link ativo no menu
-- **Dark mode** com toggle e persistência em localStorage
-- **Skip navigation link** para acessibilidade
-- **Focus visible** para navegação por teclado
-- **Meta tags Open Graph e Twitter Card** para SEO
-- **API simulation** com async/await e error handling
-- **Totalmente responsivo** (Mobile-First)
+- **Dark/Light mode** com persistência via `localStorage` e respeito à preferência do sistema
+- **Menu mobile** com animação e fechamento ao clicar fora ou pressionar Escape
+- **Scroll spy** que destaca o link do menu conforme a seção visível
+- **Scroll reveal** nas seções ao rolar a página (IntersectionObserver)
+- **Contadores animados** nas métricas, disparados ao entrar na viewport
+- **Toggle de billing** mensal/anual com preço antigo riscado e anúncio para screen readers
+- **API simulation** com async/await, try/catch e error handling robusto
+- **Renderização dinâmica** de testimonials via DOM manipulation
+- **Skip link** para navegação por teclado
+- **SEO**: Open Graph, Twitter Card, canonical URL, meta description
 
-## Padrões Adotados
+---
 
-### Arquitetura
-- **ES Modules** com import/export
-- **CSS Componentizado** com base/, layout/, components/
-- **Modularização** por responsabilidade
-- **Clean Code** com validação de elementos
+## Como rodar localmente
 
-### CSS
-- **BEM** (Block Element Modifier) para nomenclatura
-- **Mobile-First** com media queries `min-width`
-- **CSS Variables** para design tokens
-- **Dark Mode** com `[data-theme="dark"]`
-- **@import** para organizar partials
+Pré-requisitos: nenhum. Apenas um navegador moderno.
 
-### JavaScript
-- **async/await** com try/catch
-- **Event Delegation** para performance
-- **IntersectionObserver** para scroll effects
-- **localStorage** para persistência
-- **Throttle** para scroll listeners
+```bash
+# 1. Clone o repositório
+git clone https://github.com/DiovannyMartins/saas-landing-page.git
 
-### Acessibilidade (WCAG)
-- **Skip navigation link**
-- **aria-expanded**, **aria-controls**, **aria-label**
-- **aria-hidden** para elementos decorativos
-- **role="img"** com labels descritivos
-- **Focus visible** para navegação por teclado
-- **Contraste** melhorado (text-muted: #4b5563)
+# 2. Entre na pasta
+cd saas-landing-page
 
-### SEO
-- **Open Graph** meta tags
-- **Twitter Card** meta tags
-- **Canonical URL**
-- **Meta description** otimizada
-- **Favicon SVG**
+# 3. Abra no navegador
+# Opção A: duplo clique no index.html
+# Opção B: Live Server no VS Code (recomendado para desenvolvimento)
+```
 
-## Versões
+Não há `npm install`, não há build, não há variáveis de ambiente. É static-first por design.
 
-- **[v1.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v1.0.0)** — Versão inicial, 100% HTML5 e CSS3
-- **[v2.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v2.0.0)** — JavaScript: scroll reveal, contador animado, toggle de billing e scroll spy
-- **[v3.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v3.0.0)** — Auditoria profissional: ES Modules, Mobile-First, BEM, SEO e acessibilidade
-- **[v4.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v4.0.0)** — Dark mode, API simulation, melhorias de performance
-- **[v5.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v5.0.0)** — CSS componentizado em módulos organizados
+---
+
+## Estrutura de pastas
+
+```
+saas-landing-page/
+├── assets/
+│   └── favicon.svg              # Favicon da marca
+├── css/
+│   ├── base/
+│   │   ├── variables.css        # Variáveis CSS (cores, espaçamentos, dark mode)
+│   │   ├── reset.css            # Reset e estilos base
+│   │   └── accessibility.css    # Skip link, sr-only, focus visible
+│   ├── layout/
+│   │   ├── container.css        # Container responsivo
+│   │   └── sections.css         # Seções base
+│   ├── components/
+│   │   ├── button.css           # Botões (BEM)
+│   │   ├── header.css           # Header e navegação
+│   │   ├── hero.css             # Seção hero e mockup
+│   │   ├── metrics.css          # Métricas
+│   │   ├── features.css         # Features e steps
+│   │   ├── testimonials.css     # Depoimentos
+│   │   ├── pricing.css          # Preços
+│   │   ├── footer.css           # Rodapé
+│   │   ├── animations.css       # Scroll reveal
+│   │   ├── billing.css          # Toggle mensal/anual
+│   │   └── theme.css            # Dark mode toggle
+│   └── main.css                 # Entry point (importa todos os módulos)
+── src/
+│   └── scripts/
+│       ├── main.js              # Entry point (inicializa módulos)
+│       └── modules/
+│           ├── api.js           # Fetch de dados com async/await
+│           ├── billing.js       # Toggle de preços
+│           ├── counter.js       # Contadores animados
+│           ├── dom.js           # Renderização dinâmica
+│           ├── menu.js          # Menu mobile
+│           ├── scroll.js        # Scroll effects e reveal
+│           ├── scrollspy.js     # Navegação ativa
+│           ├── theme.js         # Dark/Light mode
+│           └── utils.js         # Funções auxiliares (throttle, DOM helpers)
+── index.html                   # Página principal
+└── README.md
+```
+
+---
+
+## O que aprendi
+
+- **Manipulação do DOM** — criação dinâmica de elementos, `DocumentFragment`, XSS prevention
+- **Organização de código** — separação em módulos ES6, cada funcionalidade isolada e testável
+- **CSS modular** — uso de `@import` para organizar estilos em base, layout e componentes
+- **BEM** — nomenclatura consistente (`.block__element--modifier`)
+- **Responsividade** — mobile-first com media queries `min-width`, grid e flexbox
+- **Acessibilidade** — ARIA labels, navegação por teclado, skip link, `aria-live`, focus management
+- **Performance** — `IntersectionObserver`, `requestAnimationFrame`, throttle, lazy loading
+- **Persistência de estado** — uso de `localStorage` para manter preferências do usuário entre sessões
+- **Async/Await** — consumo de API com `try/catch` e error handling robusto
+
+---
+
+## Testes
+
+Este projeto não possui suite de testes automatizados no momento. A validação é feita manualmente:
+
+- Teste de responsividade (Chrome DevTools: mobile, tablet, desktop)
+- Navegação por teclado (Tab, Enter, Escape)
+- Alternância de tema e persistência após reload
+- Toggle de billing e anúncio para screen readers
+- Menu mobile (abrir, fechar, clicar fora, Escape)
+- Scroll reveal e scroll spy
+- Contadores animados ao entrar na viewport
+- Fetch de API e renderização dinâmica
+
+---
+
+## Roadmap / Melhorias futuras
+
+- Migrar para um gerador estático (Astro ou 11ty) para otimizar build
+- Adicionar testes E2E com Playwright
+- Implementar página de detalhes para cada feature
+- Adicionar modo de alto contraste
+- Integrar formulário de contato com backend
+- Adicionar métricas de performance (Lighthouse CI)
+- Suporte a múltiplos idiomas (i18n)
+- Implementar PWA com service worker
+
+---
 
 ## Autor
 
-Diovanny Martins
+**Diovanny Martins** — Desenvolvedor Front-End
+
+- **GitHub:** [@DiovannyMartins](https://github.com/DiovannyMartins)
+- **LinkedIn:** [Diovanny Martins](https://linkedin.com/in/diovanny-martins)
+- **E-mail:** [diovannydev@gmail.com](mailto:diovannydev@gmail.com)
+
+---
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](./LICENSE).
