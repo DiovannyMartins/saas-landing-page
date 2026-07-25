@@ -33,13 +33,6 @@ async function loadTestimonials() {
     const transformed = transformTestimonials(data);
 
     renderTestimonials(transformed);
-
-    const stats = transformed.reduce((acc, item) => {
-      acc.total++;
-      return acc;
-    }, { total: 0 });
-
-    console.log("Testimonials loaded:", stats.total);
   } catch (error) {
     console.error("Failed to load testimonials:", error.message);
   }
