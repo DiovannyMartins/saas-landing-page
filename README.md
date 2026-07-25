@@ -1,14 +1,8 @@
-# SaaS Landing Page
+# NexaSaaS - Landing Page Profissional
 
 Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e JavaScript (ES Modules), com design moderno inspirado em plataformas como Vercel e Stripe.
 
 **Acesse:** [diovannymartins.github.io/saas-landing-page](https://diovannymartins.github.io/saas-landing-page/)
-
-## Tecnologias
-
-- HTML5 semantico
-- CSS3 (Mobile-First, BEM)
-- JavaScript (ES Modules)
 
 ## Estrutura do Projeto
 
@@ -16,47 +10,84 @@ Landing page profissional para produto SaaS, desenvolvida com HTML5, CSS3 e Java
 ├── assets/
 │   └── favicon.svg
 ├── css/
-│   └── style.css
+│   └── style.css              # CSS com variáveis, BEM e Dark Mode
 ├── src/
 │   └── scripts/
-│       ├── main.js
+│       ├── main.js            # Entry point
 │       └── modules/
-│           ├── billing.js
-│           ├── counter.js
-│           ├── menu.js
-│           ├── scroll.js
-│           ├── scrollspy.js
-│           └── utils.js
-└── index.html
+│           ├── api.js         # Async/await com error handling
+│           ├── billing.js     # Toggle mensal/anual
+│           ├── counter.js     # Contadores animados
+│           ├── menu.js        # Menu mobile
+│           ├── scroll.js      # Scroll effects
+│           ├── scrollspy.js   # Navegação ativa
+│           ├── theme.js       # Dark mode toggle
+│           └── utils.js       # Funções auxiliares
+└── index.html                 # HTML semântico com SEO e A11y
 ```
+
+## Tecnologias
+
+- HTML5 semântico
+- CSS3 (Mobile-First, BEM, Dark Mode)
+- JavaScript (ES Modules, async/await)
 
 ## Funcionalidades
 
 - **Menu mobile responsivo** com aria-expanded e aria-controls
 - **Header com efeito ao rolar** (sombra e blur dinâmicos)
 - **Scroll reveal** com IntersectionObserver
-- **Contador animado nas metricas**, disparado ao entrar na tela
-- **Toggle de billing mensal/anual**, com preco antigo riscado
+- **Contador animado nas métricas**, disparado ao entrar na tela
+- **Toggle de billing mensal/anual**, com preço antigo riscado
 - **Scroll spy** com link ativo no menu
+- **Dark mode** com toggle e persistência em localStorage
 - **Skip navigation link** para acessibilidade
-- **Focus visible** para navegacao por teclado
+- **Focus visible** para navegação por teclado
 - **Meta tags Open Graph e Twitter Card** para SEO
+- **API simulation** com async/await e error handling
 - **Totalmente responsivo** (Mobile-First)
 
-## Padroes Adotados
+## Padrões Adotados
 
-- **BEM** (Block Element Modifier) para nomenclatura CSS
+### Arquitetura
+- **ES Modules** com import/export
+- **Modularização** por responsabilidade
+- **Clean Code** com validação de elementos
+
+### CSS
+- **BEM** (Block Element Modifier) para nomenclatura
 - **Mobile-First** com media queries `min-width`
-- **ES Modules** com `import/export`
-- **Clean Code** com validacao de elementos e throttle
-- **WCAG AA** de contraste e acessibilidade
-- **HTML semantico** com landmarks, article, blockquote
+- **CSS Variables** para design tokens
+- **Dark Mode** com `[data-theme="dark"]`
 
-## Versoes
+### JavaScript
+- **async/await** com try/catch
+- **Event Delegation** para performance
+- **IntersectionObserver** para scroll effects
+- **localStorage** para persistência
+- **Throttle** para scroll listeners
 
-- **[v1.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v1.0.0)** — Versao inicial, 100% HTML5 e CSS3
+### Acessibilidade (WCAG)
+- **Skip navigation link**
+- **aria-expanded**, **aria-controls**, **aria-label**
+- **aria-hidden** para elementos decorativos
+- **role="img"** com labels descritivos
+- **Focus visible** para navegação por teclado
+- **Contraste** melhorado (text-muted: #4b5563)
+
+### SEO
+- **Open Graph** meta tags
+- **Twitter Card** meta tags
+- **Canonical URL**
+- **Meta description** otimizada
+- **Favicon SVG**
+
+## Versões
+
+- **[v1.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v1.0.0)** — Versão inicial, 100% HTML5 e CSS3
 - **[v2.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v2.0.0)** — JavaScript: scroll reveal, contador animado, toggle de billing e scroll spy
 - **[v3.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v3.0.0)** — Auditoria profissional: ES Modules, Mobile-First, BEM, SEO e acessibilidade
+- **[v4.0.0](https://github.com/DiovannyMartins/saas-landing-page/releases/tag/v4.0.0)** — Dark mode, API simulation, melhorias de performance
 
 ## Autor
 
