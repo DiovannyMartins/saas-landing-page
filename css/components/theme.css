@@ -1,0 +1,56 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--text-muted);
+}
+
+.theme-toggle__icon--light,
+.theme-toggle__icon--dark {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle__icon--dark,
+[data-theme="dark"] .theme-toggle__icon--light {
+  display: block;
+}
+
+[data-theme="dark"] .navbar {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+[data-theme="dark"] .navbar--scrolled {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+[data-theme="dark"] .mockup {
+  background-color: #020617;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .mockup__header {
+  background-color: #0f172a;
+}
+
+[data-theme="dark"] .mockup__sidebar,
+[data-theme="dark"] .mockup__card,
+[data-theme="dark"] .mockup__box {
+  background: #0f172a;
+}
+
+[data-theme="dark"] .billing-discount {
+  background-color: #064e3b;
+  color: #6ee7b7;
+}

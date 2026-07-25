@@ -1,0 +1,77 @@
+.features {
+  background-color: var(--surface-color);
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--bg-color);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: #d1d5db;
+}
+
+.feature-card__icon {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  background: var(--surface-color);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--text-main);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.steps-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.step-item {
+  text-align: center;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: var(--text-main);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.step-connector {
+  width: 2px;
+  height: 40px;
+  background: var(--border-color);
+}
