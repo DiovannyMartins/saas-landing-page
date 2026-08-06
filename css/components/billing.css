@@ -13,8 +13,8 @@
 }
 
 .billing-discount {
-  background-color: #dcfce7;
-  color: #16a34a;
+  background-color: var(--billing-discount-bg);
+  color: var(--billing-discount-color);
   padding: 2px 8px;
   border-radius: 20px;
   font-size: 0.75rem;

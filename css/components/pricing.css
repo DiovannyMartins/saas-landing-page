@@ -70,10 +70,20 @@
   display: inline;
 }
 
-.features-list li {
+.pricing-card__features-list li {
   margin-bottom: 12px;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+@media (min-width: 1024px) {
+  .pricing__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pricing-card--popular {
+    transform: scale(1.05);
+  }
 }

@@ -12,7 +12,7 @@ import { initTheme } from "./modules/theme.js";
 import { fetchTestimonials, transformTestimonials } from "./modules/api.js";
 import { renderTestimonials } from "./modules/dom.js";
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initScrollEffects();
   initCounters();
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initScrollSpy();
   initTheme();
 
-  await loadTestimonials();
+  loadTestimonials();
 });
 
 /**

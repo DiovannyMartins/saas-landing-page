@@ -29,6 +29,14 @@
 
   --transition: all 0.2s ease;
   --container-width: 1200px;
+
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --navbar-bg-scrolled: rgba(255, 255, 255, 0.95);
+
+  --billing-discount-bg: #dcfce7;
+  --billing-discount-color: #16a34a;
+  --billing-discount-bg-dark: #064e3b;
+  --billing-discount-color-dark: #6ee7b7;
 }
 
 [data-theme="dark"] {
@@ -36,7 +44,7 @@
   --surface-color: #1e293b;
   --surface-hover: #334155;
   --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --text-muted: #a1a1aa;
 
   --primary: #ffffff;
   --primary-hover: #e2e8f0;
@@ -55,4 +63,11 @@
   --mockup-bg: #020617;
   --mockup-header: #0f172a;
   --mockup-card: #0f172a;
+
+  --navbar-bg: rgba(15, 23, 42, 0.8);
+  --navbar-bg-scrolled: rgba(15, 23, 42, 0.95);
+
+  --billing-discount-bg: #064e3b;
+  --billing-discount-color: #6ee7b7;
+}
 }

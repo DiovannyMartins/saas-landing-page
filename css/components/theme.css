@@ -28,14 +28,14 @@
 }
 
 [data-theme="dark"] .navbar {
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--navbar-bg-dark);
 }
 
 [data-theme="dark"] .navbar--scrolled {
-  background: rgba(15, 23, 42, 0.95);
+  background: var(--navbar-bg-scrolled-dark);
 }
 
 [data-theme="dark"] .billing-discount {
-  background-color: #064e3b;
-  color: #6ee7b7;
+  background-color: var(--billing-discount-bg-dark);
+  color: var(--billing-discount-color-dark);
 }

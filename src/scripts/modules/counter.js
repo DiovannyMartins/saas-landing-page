@@ -35,10 +35,13 @@ export function initCounters() {
 }
 
 function animarContador(elemento) {
-  const valorFinal = parseFloat(elemento.dataset.valor);
+  const valorRaw = elemento.dataset.valor;
+  if (!valorRaw) return;
+
+  const valorFinal = parseFloat(valorRaw);
   const prefixo = elemento.dataset.prefixo || "";
   const sufixo = elemento.dataset.sufixo || "";
-  const casasDecimais = elemento.dataset.valor.includes(".") ? 1 : 0;
+  const casasDecimais = valorRaw.includes(".") ? 1 : 0;
 
   const inicio = performance.now();
 

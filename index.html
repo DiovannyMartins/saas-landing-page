@@ -57,9 +57,11 @@
 
             <div class="nav-menu-wrapper" id="nav-menu">
                 <nav class="nav-links" aria-label="Menu principal">
-                    <a href="#features">Recursos</a>
-                    <a href="#how-it-works">Como funciona</a>
-                    <a href="#pricing">Preços</a>
+                    <ul>
+                        <li><a href="#features">Recursos</a></li>
+                        <li><a href="#how-it-works">Como funciona</a></li>
+                        <li><a href="#pricing">Preços</a></li>
+                    </ul>
                 </nav>
 
                 <div class="nav-actions">
@@ -173,7 +175,7 @@
 
                 <div class="features__grid">
 
-                    <article class="feature-card">
+                    <div class="feature-card">
 
                         <div class="feature-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
@@ -184,9 +186,9 @@
                         <h3>Velocidade</h3>
                         <p>Infraestrutura global edge para carregamentos em milissegundos.</p>
 
-                    </article>
+                    </div>
 
-                    <article class="feature-card">
+                    <div class="feature-card">
 
                         <div class="feature-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
@@ -198,9 +200,9 @@
                         <h3>Segurança</h3>
                         <p>Criptografia de ponta a ponta e conformidade com SOC2 e LGPD.</p>
 
-                    </article>
+                    </div>
 
-                    <article class="feature-card">
+                    <div class="feature-card">
 
                         <div class="feature-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
@@ -214,9 +216,9 @@
                         <h3>Colaboração</h3>
                         <p>Trabalhe em tempo real com sua equipe em projetos compartilhados.</p>
 
-                    </article>
+                    </div>
 
-                    <article class="feature-card">
+                    <div class="feature-card">
 
                         <div class="feature-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
@@ -229,7 +231,7 @@
                         <h3>Analytics</h3>
                         <p>Métricas detalhadas e relatórios automáticos gerados por IA.</p>
 
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -277,54 +279,54 @@
                 <div class="testimonials__grid">
                     <article class="testimonial-card">
                         <blockquote>
-                            <p class="quote">
+                            <p class="testimonial-card__quote">
                                 "A melhor ferramenta que já usamos. A velocidade e a interface limpa economizaram
                                 centenas de horas da nossa equipe de engenharia."
                             </p>
                         </blockquote>
 
-                        <footer class="author">
-                            <div class="avatar bg-blue" role="img" aria-label="Foto de Sarah Jenkins"></div>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar bg-blue" aria-hidden="true"></div>
 
-                            <div class="author-info">
+                            <div class="testimonial-card__author-info">
                                 <h3>Sarah Jenkins</h3>
                                 <span>CTO @ TechFlow</span>
                             </div>
-                        </footer>
+                        </div>
                     </article>
 
                     <article class="testimonial-card">
                         <blockquote>
-                            <p class="quote">
+                            <p class="testimonial-card__quote">
                                 "Migramos de 3 plataformas diferentes para o NexaSaaS. A centralização dos nossos
                                 dados mudou o jogo para nossa empresa."
                             </p>
                         </blockquote>
 
-                        <footer class="author">
-                            <div class="avatar bg-purple" role="img" aria-label="Foto de Marcos Silva"></div>
-                            <div class="author-info">
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar bg-purple" aria-hidden="true"></div>
+                            <div class="testimonial-card__author-info">
                                 <h3>Marcos Silva</h3>
                                 <span>Head of Product @ StartUpX</span>
                             </div>
-                        </footer>
+                        </div>
                     </article>
 
                     <article class="testimonial-card">
                         <blockquote>
-                            <p class="quote">
+                            <p class="testimonial-card__quote">
                                 "O suporte é fenomenal e a plataforma nunca cai. O design me lembra a qualidade da
                                 Vercel e do Stripe."
                             </p>
                         </blockquote>
 
-                        <footer class="author">
-                            <div class="avatar bg-green" role="img" aria-label="Foto de Elena Rostova"></div>
-                            <div class="author-info">
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar bg-green" aria-hidden="true"></div>
+                            <div class="testimonial-card__author-info">
                                 <h3>Elena Rostova</h3>
                                 <span>Design Lead @ Creativ</span>
                             </div>
-                        </footer>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -350,7 +352,7 @@
                 <div class="pricing__grid">
                     <div class="pricing-card">
                         <h3>Básico</h3>
-                        <p class="price-desc">Para indivíduos e freelancers</p>
+                            <p class="pricing-card__description">Para indivíduos e freelancers</p>
                         <div class="price" id="precoBasico" data-mensal="0" data-anual="0">
                             <span>R$</span>
                             <span class="price-valor-antigo" id="precoBasicoAntigo"></span>
@@ -358,7 +360,7 @@
                             <span>/mês</span>
                         </div>
 
-                        <ul class="features-list">
+                        <ul class="pricing-card__features-list">
                             <li>✓ Até 3 projetos</li>
                             <li>✓ 2GB de armazenamento</li>
                             <li>✓ Suporte da comunidade</li>
@@ -369,7 +371,7 @@
                     <div class="pricing-card pricing-card--popular">
                         <div class="popular-badge">Mais escolhido</div>
                         <h3>Pro</h3>
-                        <p class="price-desc">Para pequenas e médias equipes</p>
+                        <p class="pricing-card__description">Para pequenas e médias equipes</p>
                         <div class="price" id="precoPro" data-mensal="49" data-anual="39">
                             <span>R$</span>
                             <span class="price-valor-antigo" id="precoProAntigo"></span>
@@ -377,7 +379,7 @@
                             <span>/mês</span>
                         </div>
 
-                        <ul class="features-list">
+                        <ul class="pricing-card__features-list">
                             <li>✓ Projetos ilimitados</li>
                             <li>✓ 50GB de armazenamento</li>
                             <li>✓ Analytics avançado</li>
@@ -388,9 +390,9 @@
 
                     <div class="pricing-card">
                         <h3>Enterprise</h3>
-                        <p class="price-desc">Para grandes corporações</p>
+                        <p class="pricing-card__description">Para grandes corporações</p>
                         <div class="price">Personalizado</div>
-                        <ul class="features-list">
+                        <ul class="pricing-card__features-list">
                             <li>✓ Tudo do plano Pro</li>
                             <li>✓ SSO (SAML)</li>
                             <li>✓ Servidor dedicado</li>
@@ -443,8 +445,8 @@
             <div class="footer__bottom">
                 <p>&copy; 2026 Diovanny. Todos os direitos reservados.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                    <a href="#" aria-label="GitHub">GitHub</a>
+                    <a href="#" aria-disabled="true">LinkedIn</a>
+                    <a href="#" aria-disabled="true">GitHub</a>
                 </div>
             </div>
         </div>

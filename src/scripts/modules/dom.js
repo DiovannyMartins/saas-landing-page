@@ -21,11 +21,11 @@ export function renderTestimonials(testimonials) {
 
     article.innerHTML = `
       <blockquote>
-        <p class="quote">"${escapeHtml(testimonial.quote)}"</p>
+        <p class="testimonial-card__quote">"${escapeHtml(testimonial.quote)}"</p>
       </blockquote>
-      <div class="author">
-        <div class="avatar ${testimonial.color}" role="img" aria-label="Foto de ${escapeHtml(testimonial.name)}"></div>
-        <div class="author-info">
+      <div class="testimonial-card__author">
+        <div class="testimonial-card__avatar ${testimonial.color}" aria-hidden="true"></div>
+        <div class="testimonial-card__author-info">
           <h3>${escapeHtml(testimonial.name)}</h3>
           <span>${escapeHtml(testimonial.role)}</span>
         </div>
@@ -45,7 +45,10 @@ export function renderTestimonials(testimonials) {
  * @returns {string} Escaped text
  */
 function escapeHtml(text) {
-  const div = document.createElement("div");
-  div.textContent = text;
-  return div.innerHTML;
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }

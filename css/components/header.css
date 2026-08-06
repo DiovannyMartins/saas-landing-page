@@ -2,14 +2,14 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--navbar-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   will-change: transform;
 }
 
 .navbar--scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--navbar-bg-scrolled);
   box-shadow: var(--shadow-sm);
 }
 
@@ -71,7 +71,7 @@
   display: flex;
 }
 
-.nav-links {
+.nav-links ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -103,4 +103,39 @@
 
 .nav-actions .btn--ghost {
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .nav-menu-wrapper {
+    display: flex;
+    position: static;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
+    padding: 0;
+    border-bottom: none;
+    box-shadow: none;
+    gap: 32px;
+    text-align: left;
+  }
+
+  .nav-links ul {
+    flex-direction: row;
+    width: auto;
+    gap: 32px;
+  }
+
+  .nav-actions {
+    flex-direction: row;
+    width: auto;
+    gap: 12px;
+  }
+
+  .nav-actions .btn--ghost {
+    width: auto;
+  }
 }

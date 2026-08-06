@@ -50,10 +50,8 @@ export async function fetchTestimonials() {
       color: colors[index] || "bg-blue",
     }));
   } catch (error) {
-    if (error instanceof ApiError) {
-      console.error("API Error:", error.message);
-      throw error;
-    }
+    if (error instanceof ApiError) throw error;
+
     console.error("Network Error:", error);
     throw new ApiError("Falha na conexão. Tente novamente mais tarde.", 0);
   }

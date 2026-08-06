@@ -145,34 +145,6 @@ saas-landing-page/
 
 ---
 
-## Testes
-
-Este projeto não possui suite de testes automatizados no momento. A validação é feita manualmente:
-
-- Teste de responsividade (Chrome DevTools: mobile, tablet, desktop)
-- Navegação por teclado (Tab, Enter, Escape)
-- Alternância de tema e persistência após reload
-- Toggle de billing e anúncio para screen readers
-- Menu mobile (abrir, fechar, clicar fora, Escape)
-- Scroll reveal e scroll spy
-- Contadores animados ao entrar na viewport
-- Fetch de API e renderização dinâmica
-
----
-
-## Roadmap / Melhorias futuras
-
-- Migrar para um gerador estático (Astro ou 11ty) para otimizar build
-- Adicionar testes E2E com Playwright
-- Implementar página de detalhes para cada feature
-- Adicionar modo de alto contraste
-- Integrar formulário de contato com backend
-- Adicionar métricas de performance (Lighthouse CI)
-- Suporte a múltiplos idiomas (i18n)
-- Implementar PWA com service worker
-
----
-
 ## Autor
 
 **Diovanny Martins** — Desenvolvedor Front-End

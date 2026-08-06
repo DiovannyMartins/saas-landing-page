@@ -15,19 +15,19 @@
   border: 1px solid var(--border-color);
 }
 
-.quote {
+.testimonial-card__quote {
   font-size: 1.05rem;
   margin-bottom: 24px;
   font-style: italic;
 }
 
-.author {
+.testimonial-card__author {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.avatar {
+.testimonial-card__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -43,4 +43,10 @@
 
 .bg-green {
   background: #10b981;
+}
+
+@media (min-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }

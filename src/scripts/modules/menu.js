@@ -51,12 +51,14 @@ export function initMenu() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      const isMenuOpen = navMenuWrapper.classList.contains("nav-menu-wrapper--active");
-      if (isMenuOpen) {
-        closeMenu();
-        menuToggle.focus();
-      }
-    }
+    if (event.key !== "Escape") return;
+
+    const isMenuOpen = navMenuWrapper.classList.contains("nav-menu-wrapper--active");
+    if (!isMenuOpen) return;
+
+    if (event.target.closest("[data-modal]")) return;
+
+    closeMenu();
+    menuToggle.focus();
   });
 }
